@@ -1,0 +1,31 @@
+﻿@model Bloger.Models.Blog
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@*beginform is like form method = post*@  
+
+@using (Html.BeginForm("Create", "Home"))
+{
+     <div class="form-group">
+         @Html.LabelFor(bl => bl.title)
+         @Html.TextBoxFor(bl => bl.title, new { @class = "form-control" })
+     </div>
+
+     <div class="form-group">
+         @Html.LabelFor(bl => bl.author)
+         @Html.TextBoxFor(bl => bl.author, new { @class = "form-control" })
+     </div>
+
+     <div class="form-group">
+         @Html.LabelFor(bl => bl.content)
+         @Html.TextAreaFor(bl => bl.content, new { @class = "form-control" })
+     </div>
+
+     <button type="submit" class="btn btn-primary">
+         Post
+     </button>
+}
+
